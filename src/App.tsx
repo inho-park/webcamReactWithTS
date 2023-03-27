@@ -12,6 +12,7 @@ const OPTIONS: RecordWebcamOptions = {
 export const App = () => {
 
     const recordWebcam: RecordWebcamHook = useRecordWebcam(OPTIONS);
+
     const getRecordingFileHooks = async () => {
         const blob = await recordWebcam.getRecording();
         console.log(blob);
@@ -75,7 +76,7 @@ export const App = () => {
 
             <video autoPlay ref={recordWebcam.previewRef}
             style = {{
-                display: `${recordWebcam.status === CAMERA_STATUS.PREVIEW 
+                display: `${recordWebcam.status === CAMERA_STATUS.PREVIEW
                     ? "block"
                     : "none"
                 }`
